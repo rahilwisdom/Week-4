@@ -1,0 +1,30 @@
+name: CI (Continuous Integration)
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build-testing:
+    name: Build and Testing
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+    
+      - name: Install Docker Compose 
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose
+      
+      - name: Build and Run Container
+        run: |
+          sudo docker compose up -d
+
+      - name: Testing
+        run: |
+          sleep 10
+          pip install selenium pytest chromedriver-autoinstaller PyVirtualDisplay
+          python3 testing/test.py          
