@@ -1,7 +1,7 @@
 name: CI (Continuous Integration)
 
 on:
-  pull_request:
+  push:
     branches: [ "main" ]
 
 jobs:
@@ -27,4 +27,4 @@ jobs:
         run: |
           sleep 10
           pip install selenium pytest chromedriver-autoinstaller PyVirtualDisplay
-          python3 testing/test.py          
+          pytest testing/test.py          
