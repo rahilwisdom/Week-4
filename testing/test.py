@@ -41,12 +41,12 @@ class TestFormElements:
     def test_nama_label(self):
         # Mencari elemen label Nama dan memeriksa teksnya
         nama_label = self.driver.find_element(By.XPATH, "//label[@for='nama']")
-        assert nama_label.text == "Nama:", "Pengecekan Nama gagal"
+        assert nama_label.text == "Nama Lengkap:", "Pengecekan Nama gagal"
 
     def test_nim_label(self):
         # Mencari elemen label NIM dan memeriksa teksnya
         nim_label = self.driver.find_element(By.XPATH, "//label[@for='nim']")
-        assert nim_label.text == "NIM:", "Pengecekan NIM gagal"
+        assert nim_label.text == "Nomor Induk Mahasiswa:", "Pengecekan NIM gagal"
 
     def test_mata_kuliah_label(self):
         # Mencari elemen label Mata Kuliah dan memeriksa teksnya
